@@ -1,0 +1,25 @@
+<h1>Choose an option</h1>
+
+<div>
+    {% if selector_id == 0 %}
+        <p>home page</p>
+    {% else %}
+        <a href="{% url 'algorithms:home' %}">home page</a>
+    {% endif %}
+</div>
+
+<div>
+    {% if selector_id == 1 %}
+        <p>multiple lists sort</p>
+    {% else %}
+        <a href="{% url 'algorithms:multiple_lists' %}">multiple lists sort</a>
+    {% endif %}
+</div>
+
+<div>
+    {% if selector_id == 2 %}
+        <p>concrete list sort</p>
+    {% else %}
+        <a href="{% url 'algorithms:concrete_list' %}">concrete list sort</a>
+    {% endif %}
+</div>

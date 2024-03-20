@@ -1,0 +1,24 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}multi sort{% endblock %}
+{% block content %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="submit">
+    </form>
+    <div class="row">
+        <div class="col-6">
+            <img class="img-fluid" src="{% static 'img/real_plot.png' %}" alt="">
+        </div>
+        <div class="col-6">
+            <img class="img-fluid" src="{% static 'img/theory_plot.png' %}" alt="">
+        </div>
+    </div>
+    <div class="row">
+        {% for array in sorted_lists %}
+            <p>{{ array }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
