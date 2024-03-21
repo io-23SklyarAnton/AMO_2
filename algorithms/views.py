@@ -32,7 +32,7 @@ class ConcreteListView(FormView):
     success_url = '#'
 
     def form_valid(self, form):
-        sorted_list, execution_time = get_sort_list_and_time(form)
+        sorted_list, execution_time, operations = get_sort_list_and_time(form)
         self.request.session['sorted_list'] = sorted_list
         self.request.session['execution_time'] = execution_time
         return super().form_valid(form)

@@ -11,6 +11,7 @@ def build_execution_time_graph(arrays: List[list]):
     arrays_data = [merge_sort(array) for array in arrays]
     sorted_arrays = [array[0] for array in arrays_data]
     execution_times = [array[1] for array in arrays_data]
+    operations = [array[2] for array in arrays_data]
 
     # real graph
     plt.plot(n_list, execution_times, marker='o', linestyle='-')
@@ -22,10 +23,7 @@ def build_execution_time_graph(arrays: List[list]):
     plt.savefig(r'algorithms/static/img/real_plot.png')
     plt.close()
 
-    # theory graph
-    theory_operations = [n * log(n) for n in n_list]
-
-    plt.plot(n_list, theory_operations, marker='o', linestyle='-')
+    plt.plot(n_list, operations, marker='o', linestyle='-')
 
     plt.xlabel('Розмір масиву')
     plt.ylabel('Кількість операцій')
